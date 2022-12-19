@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Runs on .0.0.0.0:8000
 """HTTP server classes.
 
 Note: BaseHTTPRequestHandler doesn't implement any HTTP request; see
@@ -1277,7 +1278,7 @@ if __name__ == '__main__':
     parser.add_argument('-b', '--bind', metavar='ADDRESS',
                         help='bind to this address '
                              '(default: all interfaces)')
-    parser.add_argument('-d', '--directory', default=os.getcwd(),
+    parser.add_argument('-d', '--directory', default=os.path.join(os.getcwd(), "home"),
                         help='serve this directory '
                              '(default: current directory)')
     parser.add_argument('-p', '--protocol', metavar='VERSION',
